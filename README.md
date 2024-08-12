@@ -1,6 +1,6 @@
-# MultiAI: Advanced AI Services API
+# EverythingAI: AI tasks trained without datasets.
 
-![MultiAI Logo](https://your-logo-url.com/logo.png)
+![MultiAI Logo](https://res.cloudinary.com/dqneghcme/image/upload/v1723446961/Imposingcontext_dvdhyf.jpg)
 
 MultiAI is a state-of-the-art API suite providing cutting-edge AI services powered by Google's Gemini model. Our platform stands out by implementing the innovative "Context Injection" technique, significantly enhancing AI model performance and accuracy.
 

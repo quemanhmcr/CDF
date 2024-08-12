@@ -140,12 +140,11 @@ callSentimentAnalysisAPI(textToAnalyze)
 ```javascript
 async function callImageOCRAPI(imageUrl, language = 'English') {
   try {
-    const response = await fetch(`https://test-xcrz.onrender.com/ocr_image`, {
+    const response = await fetch(`https://test-xcrz.onrender.com/ocr_image?url=${imageUrl}&language=${language}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ url: imageUrl, language })
     });
     if (!response.ok) {
       throw new Error(`API request failed with status ${response.status}`);
@@ -159,8 +158,10 @@ async function callImageOCRAPI(imageUrl, language = 'English') {
 }
 
 // Example usage
-const imageUrl = 'https://example.com/image.jpg';
-callImageOCRAPI(imageUrl, 'French')
+const imageUrl = 'https://example.com/image.png';
+language = 'English'
+
+callImageOCRAPI(imageUrl, language)
   .then(result => {
     console.log('Image OCR Result:', result);
   })

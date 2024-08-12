@@ -107,7 +107,7 @@ callSpeechToTextAPI(audioUrl, 'Vietnamese')
 ```javascript
 async function callSentimentAnalysisAPI(text) {
   try {
-    const response = await fetch(`https://test-xcrz.onrender.com/analyze_sentiment?text=${encodeURIComponent(text)}`, {
+    const response = await fetch(`https://test-xcrz.onrender.com/analyze_sentiment?text=${text}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

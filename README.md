@@ -41,7 +41,7 @@ Benefits:
 ```javascript
 async function callDeepfakeDetectionAPI(videoUrl) {
   try {
-    const response = await fetch(`https://test-xcrz.onrender.com/detect_deepfake?file_url=${encodeURIComponent(videoUrl)}`, {
+    const response = await fetch(`https://test-xcrz.onrender.com/detect_deepfake?file_url=${videoUrl}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ async function callDeepfakeDetectionAPI(videoUrl) {
 }
 
 // Example usage
-const videoUrl = 'https://res.cloudinary.com/dqneghcme/video/upload/v1723157492/9_xxlv0w.mp4';
+const videoUrl = 'https://example/video.mp4';
 callDeepfakeDetectionAPI(videoUrl)
   .then(result => {
     console.log('Deepfake Detection Result:', result);

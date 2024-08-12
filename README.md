@@ -173,35 +173,39 @@ callImageOCRAPI(imageUrl, language)
 ### 5. ASL Interpretation
 
 ```javascript
-async function callASLInterpretationAPI(videoUrl) {
+async function callASLInterpreterAPI(videoUrl) {
   try {
-    const response = await fetch(`https://test-xcrz.onrender.com/interpret_asl`, {
+    const response = await fetch(`https://test-xcrz.onrender.com/interpret_asl?url=${videoUrl}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ url: videoUrl })
+      }
     });
+
     if (!response.ok) {
       throw new Error(`API request failed with status ${response.status}`);
     }
+
     const data = await response.json();
     return data.asl_interpretation;
+
   } catch (error) {
-    console.error('Error calling ASL Interpretation API:', error);
+    console.error('Error calling ASL Interpreter API:', error);
     throw error;
   }
 }
 
 // Example usage
-const aslVideoUrl = 'https://example.com/asl_video.mp4';
-callASLInterpretationAPI(aslVideoUrl)
-  .then(result => {
-    console.log('ASL Interpretation Result:', result);
+const videoUrl = 'https://example/video.mp4'; 
+
+callASLInterpreterAPI(videoUrl)
+  .then(interpretation => {
+    console.log('ASL Interpretation:', interpretation); 
   })
   .catch(error => {
     console.error('Error:', error);
   });
+
 ```
 
 ## 🔧 Local Development

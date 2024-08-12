@@ -74,7 +74,7 @@ callDeepfakeDetectionAPI(videoUrl)
 ```javascript
 async function callSpeechToTextAPI(audioUrl, language = 'English') {
   try {
-    const response = await fetch(`https://test-xcrz.onrender.com/speech_to_text?file_url=${encodeURIComponent(audioUrl)}&language=${encodeURIComponent(language)}`, {
+    const response = await fetch(`https://test-xcrz.onrender.com/speech_to_text?file_url=${audioUrl}&language=${language}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -93,7 +93,7 @@ async function callSpeechToTextAPI(audioUrl, language = 'English') {
 
 // Example usage
 const audioUrl = 'https://example.com/audio.mp3';
-callSpeechToTextAPI(audioUrl, 'Vietnamese')
+callSpeechToTextAPI(audioUrl, 'English')
   .then(result => {
     console.log('Speech-to-Text Result:', result);
   })
